@@ -12,19 +12,19 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'this is the build job'
-                sh 'pom.xml compile'
+                sh 'mvn compile'
             }
         }
         stage('test'){
             steps{
                 echo 'this is the test job'
-                sh 'pom.xml clean test'
+                sh 'mvn clean test'
             }
         }
         stage('package'){
             steps{
                 echo 'this is the package job'
-                sh 'pom.xml package -DskipTests'
+                sh 'mvn package -DskipTests'
             }
         }
     }
